@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class MemberController extends Controller
+{
+    public function create()
+    {
+        return view('member.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
+            'family' => 'required',
+            'contact' => 'required',
+            // 'image' => 'sometimes|mimes:jpeg,jpg,png,gif|max:2048'
+        ]);
+
+        if
+        Member::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'address' => $request->address,
+            'contact' => $request->address,
+            'family' => $request->family
+        ]);
+    }
+}
+
