@@ -21,6 +21,12 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('manish@123'),
         ]);
 
-        $this->call(MemberSeeder::class);
+        User::create([
+            'name' => 'Prang Lama',
+            'email' => 'parang_5@gmail.com',
+            'password' => Hash::make('parang@123'),
+        ]);
+
+        // $this->call(MemberSeeder::class);
     }
 }
